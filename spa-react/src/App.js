@@ -5,6 +5,22 @@ import { useState } from 'react';
 
 function App() {
   let [name,setName] = useState("Brian");
+ let [posts,setPosts] = useState([
+  {
+    id : 1,
+    title : "First Post"
+  },
+  {
+    id : 2,
+    title : "Second Post"
+  },
+  {
+    id : 3,
+    title : "Third Post"
+  }
+  ]);
+
+  console.log(posts);
 
   let changeName = () =>{
     setName('Aung Naing');
@@ -14,6 +30,15 @@ function App() {
     <div className='app'>
       <h1>Hello {name}</h1>
       <button onClick={changeName}>change name</button>
+
+      <h1>Posts</h1>
+      <ul>
+        {
+          posts.map((post)=>(
+            <li key={post.id}>{post.title}</li>
+          ))
+        }
+      </ul>
     </div>
   )
 //  let name = "Brian";
