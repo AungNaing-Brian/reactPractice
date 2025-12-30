@@ -1,20 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
-import MYImages from './assets/image2.jpg';
+import { useState } from 'react';
+// import MYImages from './assets/image2.jpg';
 
 function App() {
- let name = "Brian";
+  let [name,setName] = useState("Brian");
 
- let changeName = () => {
-  name = "Aung Naing";
-  console.log(name);
- }
- return (
-  <div>
-    <h1>Hello {name}</h1>
-    <button onClick={changeName}>change name</button>
-  </div>
- )
+  let changeName = () =>{
+    setName('Aung Naing');
+    console.log(name);
+  }
+  return (
+    <div className='app'>
+      <h1>Hello {name}</h1>
+      <button onClick={changeName}>change name</button>
+    </div>
+  )
+//  let name = "Brian";
+
+//  let changeName = () => {
+//   name = "Aung Naing";
+//   console.log(name);
+//  }
+//  return (
+//   <div>
+//     <h1>Hello {name}</h1>
+//     <button onClick={changeName}>change name</button>
+//   </div>
+//  )
+
+
+
 //  return (
 //   <div className = "add">
 //     <h1>Hello{name}</h1>
